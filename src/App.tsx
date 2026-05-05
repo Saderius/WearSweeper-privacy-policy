@@ -1,6 +1,6 @@
 import { Shield, EyeOff, Activity, CreditCard, WifiOff, Mail, Lock, Scale, Bomb } from 'lucide-react';
 import { motion } from 'motion/react';
-import { ReactNode } from 'react';
+import { ReactNode, useState } from 'react';
 
 function Section({ title, children, id }: { title: string; children: ReactNode; id?: string }) {
   return (
@@ -44,6 +44,8 @@ function FeatureCard({ icon: Icon, title, description, delay }: { icon: any, tit
 }
 
 export default function App() {
+  const [imgError, setImgError] = useState(false);
+
   return (
     <div className="min-h-screen relative overflow-hidden bg-[#FDF5EB] font-sans selection:bg-blue-200">
       {/* Animated Blob Background */}
@@ -66,7 +68,16 @@ export default function App() {
               className="w-24 h-24 sm:w-28 sm:h-28 shadow-[0_8px_32px_rgba(0,0,0,0.12)] border border-white/40 rounded-[2.25rem] overflow-hidden mx-auto mb-8 flex items-center justify-center bg-white"
               id="app-logo"
             >
-              <img src={`${import.meta.env.BASE_URL}app.png`} alt="WearSweeper Logo" className="w-full h-full object-cover" />
+              {!imgError ? (
+                <img 
+                  src={`${import.meta.env.BASE_URL}app.png`} 
+                  alt="WearSweeper Logo" 
+                  className="w-full h-full object-cover" 
+                  onError={() => setImgError(true)}
+                />
+              ) : (
+                <Bomb size={48} className="text-gray-800" strokeWidth={1.5} />
+              )}
             </motion.div>
           <motion.h1 
             initial={{ opacity: 0, y: 20 }}
