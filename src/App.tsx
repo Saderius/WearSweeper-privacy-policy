@@ -66,7 +66,7 @@ export default function App() {
               className="w-24 h-24 sm:w-28 sm:h-28 shadow-[0_8px_32px_rgba(0,0,0,0.12)] border border-white/40 rounded-[2.25rem] overflow-hidden mx-auto mb-8 flex items-center justify-center bg-white"
               id="app-logo"
             >
-              <Bomb size={48} className="text-gray-800" strokeWidth={1.5} />
+              <img src={`${import.meta.env.BASE_URL}app.png`} alt="WearSweeper Logo" className="w-full h-full object-cover" />
             </motion.div>
           <motion.h1 
             initial={{ opacity: 0, y: 20 }}
