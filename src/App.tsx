@@ -125,7 +125,7 @@ export default function App() {
           <FeatureCard 
             icon={Activity}
             title="Transparent Analytics"
-            description="We use Firebase (Google) solely for anonymous crash reporting and basic performance metrics to ensure the engine runs smoothly on all Wear OS devices. No identifying data is transmitted."
+            description="We use Firebase (Google) for basic telemetry and crash reporting to ensure the game runs smoothly. We only collect non-identifying technical metrics and gameplay events."
             delay={0.3}
           />
           <FeatureCard 
@@ -156,7 +156,7 @@ export default function App() {
               <strong>Personal Data:</strong> We do not actively prompt for, collect, or store any Personally Identifiable Information (PII) such as your name, email address, phone number, or physical address.
             </p>
             <p>
-              <strong>Usage Data and Diagnostics:</strong> To maintain and improve app stability across the fragmented Wear OS ecosystem, we utilize Google Firebase for basic telemetry. This data is fully anonymized and includes only non-identifying technical metrics (e.g., device model, OS version, crash stack traces). This information is evaluated strictly to fix bugs and improve performance.
+              <strong>Usage Data and Diagnostics:</strong> To maintain and improve app stability across the fragmented Wear OS ecosystem, we utilize Google Firebase for basic telemetry and crash reporting. The automatically collected data includes technical metrics (e.g., device model, OS version, approximate location via IP address, and crash stack traces) as well as basic gameplay events. This information is associated with a pseudonymized Firebase Installation ID—not your personal identity—and is evaluated strictly to fix bugs, improve performance, and understand how the game is played.
             </p>
           </Section>
 
@@ -166,7 +166,8 @@ export default function App() {
             </p>
             <ul className="list-disc pl-5 mt-4 space-y-2">
               <li><strong>Google Play Store:</strong> Handles all payment processing and app licensing. We do not have access to your credit card details or billing address. (<a href="https://policies.google.com/privacy" className="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">Google Privacy Policy</a>)</li>
-              <li><strong>Firebase Crashlytics:</strong> Used exclusively for capturing anonymous crash logs to help us identify and resolve issues promptly.</li>
+              <li><strong>Google Analytics for Firebase:</strong> Used to measure basic usage metrics and understand player interactions. Data collection may include IP addresses and device identifiers. (<a href="https://firebase.google.com/support/privacy" className="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">Firebase Privacy</a>)</li>
+              <li><strong>Firebase Crashlytics:</strong> Utilized for capturing crash logs, helping us quickly identify and resolve app instability.</li>
             </ul>
             <p className="mt-4">
               We emphatically declare that we are not partnered with any advertising networks.
